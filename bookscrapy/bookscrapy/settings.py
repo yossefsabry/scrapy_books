@@ -13,6 +13,12 @@ SPIDER_MODULES = ["bookscrapy.spiders"]
 NEWSPIDER_MODULE = "bookscrapy.spiders"
 
 
+# ! for format for the file json if you want to use it
+# FEEDS = {
+#       "books.json": {"format": "json"},
+# }
+
+
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = "bookscrapy (+http://www.yourdomain.com)"
 
@@ -64,7 +70,9 @@ ROBOTSTXT_OBEY = True
 # See https://docs.scrapy.org/en/latest/topics/item-pipeline.html
 ITEM_PIPELINES = {
    "bookscrapy.pipelines.BookscrapyPipeline": 300,
+   # "bookscrapy.pipelines.saveToMySQLPipline": 400, #? save to mysql after clean data
 }
+
 
 # Enable and configure the AutoThrottle extension (disabled by default)
 # See https://docs.scrapy.org/en/latest/topics/autothrottle.html
